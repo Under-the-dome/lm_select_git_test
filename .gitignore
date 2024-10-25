@@ -1,0 +1,12 @@
+# 忽略 Sphinx 构建目录
+docs/build/
+
+# 忽略编译后的字节码文件
+*.pyc
+__pycache__/
+
+# 忽略环境文件
+.env
+
+# 忽略操作系统生成的临时文件
+Thumbs.db  # Windows
