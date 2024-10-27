@@ -10,11 +10,16 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v3
-      
+
+    - name: Set up Node.js environment
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16' # 显式指定 Node.js 版本
+
     - name: Setup Python
       uses: actions/setup-python@v4
       with:
-          python-version: '3.x' # 使用 Python 3
+        python-version: '3.x' # 使用 Python 3
 
     - name: Install Dependencies
       run: |
