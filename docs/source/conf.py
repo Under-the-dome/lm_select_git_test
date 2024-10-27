@@ -13,7 +13,9 @@ author = 'HansonYin'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ['recommonmark','sphinx_markdown_tables']
+extensions = ['m2r2', 'recommonmark','sphinx_markdown_tables']
+
+source_suffix = ['.rst', '.md']
 
 templates_path = ['_templates']
 exclude_patterns = []
