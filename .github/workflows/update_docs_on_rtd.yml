@@ -43,5 +43,5 @@ jobs:
           )
           print(response)
           EOF
-        env:
-          READTHEDOCS_TOKEN: ${{ secrets.READTHEDOCS_TOKEN }}
+      env:
+        READTHEDOCS_TOKEN: ${{ secrets.READTHEDOCS_TOKEN }}
