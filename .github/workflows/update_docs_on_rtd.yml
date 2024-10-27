@@ -8,14 +8,6 @@ jobs:
   build-and-deploy-docs:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v3
-
-    - name: Setup Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.x' # 使用 Python 3
-
     - name: Install Dependencies
       run: |
         pip install readthedocs-api-client
@@ -23,17 +15,23 @@ jobs:
 
     - name: Build Documentation
       run: |
+        echo "Building documentation..."
         make html # 假设你使用的是 Sphinx 文档生成工具
+        ls -la docs/_build/html # 检查生成的文档是否存在
       working-directory: docs # 如果你的文档位于子目录中
 
     - name: Deploy Documentation to Read the Docs
       run: |
+          echo "Deploying documentation to Read the Docs..."
           python - <<EOF
           import os
           from readthedocs_api_client.client import ReadTheDocsClient
 
           # 获取环境变量中的 RTD 令牌
           rtd_token = os.environ.get("READTHEDOCS_TOKEN")
+          if not rtd_token:
+              raise ValueError("READTHEDOCS_TOKEN environment variable is not set")
+
           client = ReadTheDocsClient(rtd_token)
 
           # 构建文档
