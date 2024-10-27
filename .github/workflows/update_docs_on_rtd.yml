@@ -1,0 +1,28 @@
+name: Update Docs on Read the Docs
+
+on:
+  push:
+    branches: [ main ] # 触发条件为推送到 main 分支
+    # paths:  # 当更改以下文件时，会触发Actions更新文档
+
+jobs:
+  build-and-deploy-docs:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Install Dependencies
+      run: |
+        pip install -r requirements.txt # 或者其他安装依赖的方式
+
+    - name: Build Documentation
+      run: |
+        make html # 假设你使用的是 Sphinx 文档生成工具
+      working-directory: docs # 如果你的文档位于子目录中
+
+    - name: Deploy Documentation to Read the Docs
+      uses: amseidel/readthedocs-action@v1
+      with:
+        project: 'lm_select_test' # 替换为你的 Read the Docs 项目的名称
+        token: ${{ secrets.READTHEDOCS_TOKEN }} # 设置了 READTHEDOCS_TOKEN 的 Secret
