@@ -15,7 +15,7 @@ documentation for details.
    :maxdepth: 2
    :caption: Contents:
    
-    describe.md
+    description.md
 
 
 Indices and tables
