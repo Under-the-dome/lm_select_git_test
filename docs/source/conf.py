@@ -16,12 +16,6 @@ author = 'HansonYin'
 
 extensions = ['recommonmark','sphinx_markdown_tables', 'nbsphinx']  
 
-# 源文件后缀
-source_suffix = {
-    '.rst': 'restructuredtext',
-    '.md': 'markdown',
-    '.ipynb': 'nbsphinx',
-}
 
 templates_path = ['_templates']
 exclude_patterns = []
