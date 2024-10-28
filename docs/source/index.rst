@@ -3,12 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-lm_select_test documentation
-============================
-
-Add your content using ``reStructuredText`` syntax. See the
-`reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
-documentation for details.
+Welcome to  documentation of lm_select_test
+========================================
 
 
 .. toctree::
@@ -16,6 +12,7 @@ documentation for details.
    :caption: Contents:
    
    description.md
+   interactive_test01.ipynb
 
 
 Indices and tables

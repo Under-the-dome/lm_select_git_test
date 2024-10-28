@@ -14,12 +14,13 @@ author = 'HansonYin'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ['m2r2','sphinx_markdown_tables']  # 'recommonmark'
+extensions = ['recommonmark','sphinx_markdown_tables', 'nbsphinx']  
 
 # 源文件后缀
 source_suffix = {
     '.rst': 'restructuredtext',
     '.md': 'markdown',
+    '.ipynb': 'nbsphinx' ,
 }
 
 templates_path = ['_templates']
