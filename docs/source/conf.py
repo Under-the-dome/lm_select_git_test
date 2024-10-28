@@ -20,7 +20,7 @@ extensions = ['recommonmark','sphinx_markdown_tables', 'nbsphinx']
 source_suffix = {
     '.rst': 'restructuredtext',
     '.md': 'markdown',
-    '.ipynb': 'nbsphinx' ,
+    '.ipynb': 'nbsphinx',
 }
 
 templates_path = ['_templates']
